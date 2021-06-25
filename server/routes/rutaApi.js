@@ -23,7 +23,7 @@ const usuarios=[
 app.get("/api/login/usuario", (req, res) => {
 
     return res.status(200).json({
-        ok: false,
+        ok: true,
         message: 'Usuarios',
         usuarios
     })
@@ -55,7 +55,7 @@ app.get("/api/login/usuario/:rut", (req, res) => {
         });
     }
     return res.status(200).json({
-        ok: false,
+        ok: true,
         message: 'Usuario',
         respuesta
     });
