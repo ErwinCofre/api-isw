@@ -1,13 +1,13 @@
 {
     "name": "practica",
     "version": "1.0.0",
-    "description": "proyecto de practica",
+    "description": "proyecto de ISW",
     "main": "server.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "start": "node server.js"
     },
-    "author": "Erwin Cofré-♥♥♥-Andrés Rivera",
+    "author": "Erwin Cofré",
     "license": "ISC",
     "dependencies": {
         "body-parser": "^1.19.0",
