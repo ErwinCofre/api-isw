@@ -60,9 +60,10 @@ app.get("/api/login/usuario/:rut", (req, res) => {
 app.post("/api/login/usuario/pass/:rut", (req, res) => {
     let body;
     body = req.body;
-    const pass = body.password;
-    const rut = req.params.rut;
     console.log(body);
+    const pass = body.password;
+    console.log(pass);
+    const rut = req.params.rut;
     console.log(rut);
     if (rut == null || rut == undefined || pass == null || pass == undefined) {
         return res.status(400).json({
@@ -77,7 +78,7 @@ app.post("/api/login/usuario/pass/:rut", (req, res) => {
             message: "Rut no valido",
         });
     }
-    if ((pass = "123456")) {
+    if (pass != "123456") {
         return res.status(400).json({
             ok: false,
             message: "contraseña no valida",
