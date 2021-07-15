@@ -62,6 +62,50 @@ app.get("/api/login/usuario/:rut", (req, res) => {
 
 });
 
+
+
+app.post("/api/login/usuario/pass/:rut", (req, res) => {
+
+    const body;
+    body=req.body;
+    const pass=body.password;
+    const rut= req.params.rut;
+    if (rut==null || rut==undefined || pass==null || pass==undefined) {
+        return res.status(400).json({
+            ok: false,
+            message: 'No Existen Datos'
+        });
+    }
+
+    if (!checkRut(rut)) {
+        return res.status(400).json({
+            ok: false,
+            message: 'Rut no valido'
+        });
+    }
+    if (pass='123456') {
+        return res.status(400).json({
+            ok: false,
+            message: 'contraseÒa no valida'
+        });
+    }
+
+    let respuesta=usuarios.find(usuarios=>usuarios.rut==rut);
+    if (respuesta==null || respuesta==undefined ||!respuesta) {
+        return res.status(401).json({
+            ok: false,
+            message: 'Usuario no encontrado'
+        });
+    }
+    return res.status(200).json({
+        ok: true,
+        message: 'Usuario',
+        respuesta
+    });
+
+});
+
+
 function checkRut(rut) {
     // Obtiene el valor ingresado quitando puntos y gui√≥n.
     let valor = clean(rut);
