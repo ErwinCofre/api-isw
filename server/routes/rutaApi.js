@@ -62,7 +62,7 @@ app.post("/api/login/usuario/pass/:rut", (req, res) => {
     body = req.body;
     const pass = body.password;
     const rut = req.params.rut;
-    console.log(pass);
+    console.log(body);
     console.log(rut);
     if (rut == null || rut == undefined || pass == null || pass == undefined) {
         return res.status(400).json({
